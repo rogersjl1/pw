@@ -1,4 +1,4 @@
-# pw-php-apache
+# pw
 
 Docker image for running ProcessWire.
 
