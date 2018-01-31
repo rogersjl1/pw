@@ -6,7 +6,8 @@ RUN apt-get update \
 && a2enmod ssl \
 && docker-php-ext-install mysqli pdo_mysql iconv mcrypt zip \
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-&& docker-php-ext-install gd
+&& docker-php-ext-install gd \
+&& mkdir /var/www/pw-secure
 
 ENV LC_ALL en_US.utf8
 ENV LANG en_US.utf8
@@ -15,4 +16,4 @@ ENV LANGUAGE en_US.utf8
 EXPOSE 80
 EXPOSE 443
 
-VOLUME ["/var/www/html"]
+VOLUME ["/var/www/html", "/var/www/pw-secure"]
